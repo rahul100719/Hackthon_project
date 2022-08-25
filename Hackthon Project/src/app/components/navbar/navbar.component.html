@@ -7,6 +7,7 @@
       <a *ngIf="loggedIn" mat-icon-button style="margin-left: 20px;">{{userName}}</a>
       <a *ngIf="loggedIn" mat-icon-button style="margin-left: 20px;" (click)="logoutUser()">Logout</a>
     </mat-toolbar>
+    <h1 *ngIf="loggedIn">{{logOutDetails | json}}</h1>
 
   
   
