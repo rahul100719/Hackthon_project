@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit {
        },
        err=>{
         console.log(err)
-        alert(err.error.message)
+        alert(err.error )
         this.cred.passWord='';
         this.cred.userName='' 
        }

@@ -17,14 +17,14 @@ export class DashbordComponent implements OnInit {
     loading: boolean = false;
     img_url:string=''
   ngOnInit(): void {
-    console.log("Under get User")
-    this.userService.getUserDetail().subscribe((resp:any)=>{
-      this.users=resp
-      console.log(resp)
-    },
-    (err:any)=>{
-      console.log(err)
-})
+//     console.log("Under get User")
+//     this.userService.getUserDetail().subscribe((resp:any)=>{
+//       this.users=resp
+//       console.log(resp)
+//     },
+//     (err:any)=>{
+//       console.log(err)
+// })
   }
 
   getUser(){
