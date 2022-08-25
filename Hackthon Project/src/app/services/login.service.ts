@@ -6,7 +6,8 @@ import { Injectable } from '@angular/core';
 })
 export class LoginService {
   userName:any
-  url="http://localhost:8080/token"
+  url='https://jsonplaceholder.typicode.com/posts'
+  url1="http://localhost:8080/token"
   constructor(private http:HttpClient) { }
   loginUer(token:any){
     localStorage.setItem("token",token);
@@ -19,7 +20,7 @@ export class LoginService {
  
   getToken(cred:any){
     localStorage.setItem("userName",cred.userName);
-    return this.http.post(this.url,cred);
+    return this.http.get(this.url,cred);
   }
 
   getTokenFromLoc(){
@@ -27,11 +28,11 @@ export class LoginService {
     return localStorage.getItem("token");;
   }
   isLoggedIn(){
-    let token=localStorage.getItem("token");
-    if(token==undefined ||token==null || token=='')
-    {
-      return false;
-    }
+    // let token=localStorage.getItem("token");
+    // if(token==undefined ||token==null || token=='')
+    // {
+    //   return false;
+    // }
     return true;
   }
   logout(){
