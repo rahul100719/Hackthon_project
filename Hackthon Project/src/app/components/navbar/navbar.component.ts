@@ -22,12 +22,10 @@ export class NavbarComponent implements OnInit {
   logoutUser(){
     let chk=this.loginService.logout();
     this.loginService.logout().subscribe((resp)=>{
-      this.loggedIn=true
     this.logOutDetails=resp
     },
-    (err)=>{
-      console.log(err)
-      alert(err.error.message)
+    (err:any)=>{
+        alert(err.error.messege)
     })
     if(chk){
       alert("you have logged out Sucessfully");

@@ -24,7 +24,9 @@ export class LoginComponent implements OnInit {
        this.loginService.login(this.cred).subscribe((resp:any)=>{
                   console.log(resp);
                   // this.loginService.loginUer(resp.token)
+                  localStorage.setItem("userName",this.cred.userName);
                   window.location.href="/dashbord"
+                  
                   alert("Logged In Sucessfully");
                   // this.loginService.logout()
        },

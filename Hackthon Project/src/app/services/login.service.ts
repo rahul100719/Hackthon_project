@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class LoginService {
-
+  userName:any
   url="http://localhost:8080/token"
   constructor(private http:HttpClient) { }
   loginUer(token:any){
@@ -35,7 +35,13 @@ export class LoginService {
     return true;
   }
   logout(){
- return   this.http.get(this.url)
+    this.userName=localStorage.getItem("userName")
+    
+ return   this.http.post(this.url,this.userName)
+
+
+
+
     // localStorage.removeItem('token');
     // localStorage.removeItem('userName');
     // return true;
