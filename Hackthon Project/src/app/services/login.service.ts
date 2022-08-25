@@ -27,11 +27,11 @@ export class LoginService {
     return localStorage.getItem("token");;
   }
   isLoggedIn(){
-    let token=localStorage.getItem("token");
-    if(token==undefined ||token==null || token=='')
-    {
-      return false;
-    }
+    // let token=localStorage.getItem("token");
+    // if(token==undefined ||token==null || token=='')
+    // {
+    //   return false;
+    // }
     return true;
   }
   logout(){
